@@ -1,0 +1,114 @@
+.mrtrKill{
+  clear:both;
+}
+#mrtrPlayer{
+  width:330px;
+  height:45px;
+  background:url(img/player-bg.jpg) repeat;
+  font-family:'Open Sans', sans-serif;
+  font-size:10px;
+  color:#FFF;
+
+  #mrtrLeft{
+    float:left;
+
+    #mrtrPlayButton, #mrtrPauseButton{
+      float:left;
+      width:38px;
+      height:38px;
+      margin:3px 0px 3px 3px;
+      cursor:pointer;
+
+      p{
+        text-indent:-5000px;
+      }
+    }
+
+    #mrtrPlayButton{
+      background:url(img/controls.png) no-repeat 1px 1px;
+      &:hover{
+        background-position:1px -38px;
+      }
+    }
+    #mrtrPauseButton{
+      background:url(img/controls.png) no-repeat -41px 1px;
+      &:hover{
+        background-position:-41px -38px;
+      }
+    }
+  }
+  #mrtrRight{
+    float:right;
+    width:240px;
+    position:relative;
+
+    #mrtrVolume{
+      width:103px;
+      height:13px;
+      position:absolute;
+      right:2px;
+      top:2px;
+      background:url(img/controls.png) no-repeat -82px -47px;
+      z-index:1;
+
+      #mrtrVolumeFront{
+        width:77px; // 77px
+        height:8px;
+        position:absolute;
+        left:11px;
+        top:3px;
+        background:url(img/controls.png) no-repeat -82px -4px;
+        z-index:2;
+        overflow:hidden;
+      }
+      #mrtrVolumeKnob{
+        width:14px;
+        height:14px;
+        position:absolute;
+        top:-1px;
+        left:50px;
+        background:url(img/controls.png) no-repeat -187px -46px;
+        z-index:3;
+      }
+    }
+    #mrtrTrack{
+      width:240px;
+      text-align:left;
+      margin:16px 0 4px 0;
+      p{
+        margin:0;
+        padding:0;
+      }
+    }
+    #mrtrPosition{
+      width:240px;
+      height:8px;
+      margin:0;
+      padding:0;
+      position:relative;
+      background:url(img/controls.png) no-repeat -82px -37px;
+
+      #mrtrPositionBack{
+        width:167px; // 167px
+        height:8px;
+        position:absolute;
+        left:0;
+        top:0;
+        background:url(img/controls.png) no-repeat -82px -15px;
+        z-index:1;
+        overflow:hidden;
+      }
+      #mrtrPositionCount{
+        position:absolute;
+        left:172px;
+        top:0;
+        z-index:2;
+        p{
+          margin:0;
+          padding:0;
+          line-height:8px;
+        }
+      }
+    }
+  }
+}
