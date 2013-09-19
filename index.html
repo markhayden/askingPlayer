@@ -3,90 +3,19 @@
 <head>
 <meta charset=utf-8 />
 
-<!-- Website Design By: www.happyworm.com -->
-<title>Demo : jPlayer as a text based audio player</title>
+<title>Audio Player</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 <link rel="stylesheet" type="text/css" href="styles/css/player.css">
-<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-
-$(document).ready(function(){
-
-  // Local copy of jQuery selectors, for performance.
-  var my_jPlayer = $("#mrtrHiddenPlayer"),
-    my_trackName = $("#mrtrPlayer .track-name"),
-    my_playState = $("#mrtrPlayer .play-state"),
-    my_maxtrack = $('#mrtrPositionBack').width();
-
-  // Some options
-  var opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
-    opt_auto_play = true, // If true, when a track is selected, it will auto-play.
-    opt_text_playing = "Now playing", // Text when playing
-    opt_text_selected = "Track selected"; // Text when not playing
-
-  // A flag to capture the first track
-  var first_track = true;
-
-  // Change the time format
-  $.jPlayer.timeFormat.padMin = true;
-  $.jPlayer.timeFormat.padSec = true;
-  $.jPlayer.timeFormat.sepMin = ":";
-  $.jPlayer.timeFormat.sepSec = "";
-
-  // Initialize the play state text
-  my_playState.text(opt_text_selected);
-
-  // Instance jPlayer
-  my_jPlayer.jPlayer({
-    ready: function () {
-      $("#mrtrPlayer .track-default").click();
-    },
-    timeupdate: function(event) {
-      var complete = parseInt(event.jPlayer.status.currentPercentAbsolute, 10);
-      var output = (complete/100) * my_maxtrack;
-      $('#mrtrPositionBack').width(output);
-    },
-    play: function(event) {
-      my_playState.text(opt_text_playing);
-    },
-    pause: function(event) {
-      my_playState.text(opt_text_selected);
-    },
-    ended: function(event) {
-      my_playState.text(opt_text_selected);
-    },
-    swfPath: "js",
-    cssSelectorAncestor: "#mrtrPlayer",
-    supplied: "mp3",
-    wmode: "window"
-  });
-
-  my_trackName.text('Sample Sample');
-  my_jPlayer.jPlayer("setMedia", {
-    mp3: 'media/the-death-of-me.mp3'
-  });
-
-});
-//]]>
-
-var test = function(){
-  $('#mrtrVolumeFront').width('50%');
-}
-
-$('.jp-volume-bar').click( function(){
-  console.log('change');
-});
-</script>
+<script type="text/javascript" src="js/audioplayer.js"></script>
 
 </head>
 <body>
-<div id="mrtrHiddenPlayer"></div>
-<div id="mrtrPlayer">
-  <div id="test" class="extra-play-info"></div>
+  <!-- start mrtrPlayer -->
+  <div id="mrtrHiddenPlayer"></div>
+  <div id="mrtrPlayer">
+    <div id="test" class="extra-play-info"></div>
     <div id="mrtrLeft">
       <div class="jp-play" id="mrtrPlayButton">
         <p>Play</p>
@@ -97,8 +26,10 @@ $('.jp-volume-bar').click( function(){
       <div class="mrtrKill"></div>
     </div>
     <div id="mrtrRight">
-      <div id="mrtrVolume" class="jp-volume-bar">
-        <div id="mrtrVolumeFront" class="jp-volume-bar-value">
+      <div id="mrtrVolume">
+        <div id="mrtrVolumeMax" class="jp-volume-bar">   
+          <div id="mrtrVolumeFront" class="jp-volume-bar-value">
+          </div>
         </div>
         <div id="mrtrVolumeKnob">
         </div>
@@ -108,11 +39,12 @@ $('.jp-volume-bar').click( function(){
       </div>
       <div id="mrtrPosition">
         <div id="mrtrPositionBack">
-          <div class="jp-seek-bar"></div>
         </div>
-        <div id="mrtrPositionCount">
-          <p><span class="jp-current-time"></span>/<span class="jp-duration">4:21</span></p>
+        <div id="mrtrSeek" class="jp-seek-bar">
         </div>
+      </div>
+      <div id="mrtrPositionCount">
+        <p><span class="jp-current-time"></span>/<span class="jp-duration">4:21</span></p>
       </div>
     </div>  
   </div>

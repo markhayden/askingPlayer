@@ -38,23 +38,26 @@
       top: 2px;
       background: url(img/controls.png) no-repeat -82px -47px;
       z-index: 1; }
-      #mrtrPlayer #mrtrRight #mrtrVolume #mrtrVolumeFront {
+      #mrtrPlayer #mrtrRight #mrtrVolume #mrtrVolumeMax {
         width: 77px;
         height: 8px;
         position: absolute;
         left: 11px;
         top: 3px;
-        background: url(img/controls.png) no-repeat -82px -4px;
-        z-index: 2;
-        overflow: hidden; }
+        z-index: 2; }
+        #mrtrPlayer #mrtrRight #mrtrVolume #mrtrVolumeMax #mrtrVolumeFront {
+          width: 77px;
+          height: 8px;
+          background: url(img/controls.png) no-repeat -82px -4px;
+          overflow: hidden; }
       #mrtrPlayer #mrtrRight #mrtrVolume #mrtrVolumeKnob {
         width: 14px;
         height: 14px;
         position: absolute;
         top: -1px;
-        left: 50px;
+        left: 65px;
         background: url(img/controls.png) no-repeat -187px -46px;
-        z-index: 3; }
+        z-index: 4; }
     #mrtrPlayer #mrtrRight #mrtrTrack {
       width: 240px;
       text-align: left;
@@ -63,7 +66,7 @@
         margin: 0;
         padding: 0; }
     #mrtrPlayer #mrtrRight #mrtrPosition {
-      width: 240px;
+      width: 167px;
       height: 8px;
       margin: 0;
       padding: 0;
@@ -78,12 +81,19 @@
         background: url(img/controls.png) no-repeat -82px -15px;
         z-index: 1;
         overflow: hidden; }
-      #mrtrPlayer #mrtrRight #mrtrPosition #mrtrPositionCount {
+      #mrtrPlayer #mrtrRight #mrtrPosition #mrtrSeek {
+        width: 167px;
+        height: 8px;
         position: absolute;
-        left: 172px;
+        left: 0;
         top: 0;
-        z-index: 2; }
-        #mrtrPlayer #mrtrRight #mrtrPosition #mrtrPositionCount p {
-          margin: 0;
-          padding: 0;
-          line-height: 8px; }
+        z-index: 3; }
+    #mrtrPlayer #mrtrRight #mrtrPositionCount {
+      position: absolute;
+      left: 172px;
+      bottom: 1px;
+      z-index: 5; }
+      #mrtrPlayer #mrtrRight #mrtrPositionCount p {
+        margin: 0;
+        padding: 0;
+        line-height: 8px; }

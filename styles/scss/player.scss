@@ -51,24 +51,29 @@
       background:url(img/controls.png) no-repeat -82px -47px;
       z-index:1;
 
-      #mrtrVolumeFront{
+      #mrtrVolumeMax{
         width:77px; // 77px
         height:8px;
         position:absolute;
         left:11px;
         top:3px;
-        background:url(img/controls.png) no-repeat -82px -4px;
         z-index:2;
-        overflow:hidden;
+        
+        #mrtrVolumeFront{
+          width:77px; // 77px
+          height:8px;
+          background:url(img/controls.png) no-repeat -82px -4px;
+          overflow:hidden;
+        }
       }
       #mrtrVolumeKnob{
         width:14px;
         height:14px;
         position:absolute;
         top:-1px;
-        left:50px;
+        left:65px;
         background:url(img/controls.png) no-repeat -187px -46px;
-        z-index:3;
+        z-index:4;
       }
     }
     #mrtrTrack{
@@ -81,7 +86,7 @@
       }
     }
     #mrtrPosition{
-      width:240px;
+      width:167px;
       height:8px;
       margin:0;
       padding:0;
@@ -98,16 +103,24 @@
         z-index:1;
         overflow:hidden;
       }
-      #mrtrPositionCount{
+      #mrtrSeek{
+        width:167px; // 167px
+        height:8px;
         position:absolute;
-        left:172px;
+        left:0;
         top:0;
-        z-index:2;
-        p{
-          margin:0;
-          padding:0;
-          line-height:8px;
-        }
+        z-index:3;
+      }
+    }
+    #mrtrPositionCount{
+      position:absolute;
+      left:172px;
+      bottom:1px;
+      z-index:5;
+      p{
+        margin:0;
+        padding:0;
+        line-height:8px;
       }
     }
   }
