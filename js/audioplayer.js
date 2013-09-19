@@ -44,13 +44,17 @@ $(document).ready(function(){
       my_playState.text(opt_text_selected);
     },
     swfPath: "js",
+    supplied: "m4a, oga",
     cssSelectorAncestor: "#mrtrPlayer",
-    supplied: "mp3",
-    wmode: "window"
+    wmode: "window",
+    smoothPlayBar: true,
+    keyEnabled: true
   });
 
   my_trackName.text('Sample Sample');
   my_jPlayer.jPlayer("setMedia", {
+    m4a: "media/the-death-of-me.m4a",
+    oga: "media/the-death-of-me.ogg",
     mp3: 'media/the-death-of-me.mp3'
   });
 
@@ -1003,6 +1007,7 @@ $(document).ready(function(){
             this.options.keyEnabled && (b.jPlayer.focus = this)
         },
         play: function (a) {
+            console.log('play');
             a = "number" === typeof a ? a : NaN;
             this.status.srcSet ? (this.focus(), this.html.active ? this._html_play(a) :
                 this.flash.active && this._flash_play(a)) : this._urlNotSetError("play")
